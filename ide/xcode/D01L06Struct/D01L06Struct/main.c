@@ -81,6 +81,8 @@ int main(int argc, const char * argv[])
     A * a1 = (A*)pointer;
     printf("%d\n",a1->num);
     
+    free(a);
+    
     // insert code here...
     return 0;
 }

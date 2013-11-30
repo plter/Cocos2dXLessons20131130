@@ -23,7 +23,6 @@ void PeopleAlloc(People ** p){
     (*p) = malloc(sizeof(People));
 }
 
-
 int PeopleInit(int age,char* name,People* p){
     p->age = age;
     p->name = name;
@@ -34,6 +33,17 @@ void PeopleDelete(People * p){
     free(p);
 }
 
+
+typedef struct{
+    int num;
+    char * str;
+} A;
+
+typedef struct{
+    int num;
+    char * str;
+    char * name;
+} B;
 
 
 int main(int argc, const char * argv[])
@@ -46,18 +56,32 @@ int main(int argc, const char * argv[])
 //    People * p1 = &p;
 //    p1->age = 18;
     
-    People *p;
-    PeopleAlloc(&p);
-    PeopleInit(20, "ZhangSan", p);
-    
-    printf("%d\n",p->age);
-    
-    PeopleDelete(p);
-    
-    
-
-    // insert code here...
+//    People *p;
+//    PeopleAlloc(&p);
+//    PeopleInit(20, "ZhangSan", p);
+//    
 //    printf("%d\n",p.age);
+//    printf("%d\n",p->age);
+//
+//    PeopleDelete(p);
+    
+//    A * a = malloc(sizeof(A));
+//    a->num = 20;
+//    a->str = "Hello";
+//
+//    B* b = (B*)a;
+    
+//    printf("%d,str:%s\n",b->num,b->str);
+    
+    
+    A * a = (A*)malloc(sizeof(A));
+    a->num = 18;
+    int64_t pointer = (int64_t)a;
+    
+    A * a1 = (A*)pointer;
+    printf("%d\n",a1->num);
+    
+    // insert code here...
     return 0;
 }
 
